@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>AnuSriSai</title>
+    <style>
+        .error-message {
+            
+            font-size: 13px; /* Set the desired font size */
+        }
+    </style>
+</head>
+<body>
+    <!--ring div starts here-->
+    <form action="login.php" method="post" onsubmit="return validateForm()">
+    <div class="ring">
+        <i style="--clr:rgb(233, 164, 16);"></i>
+        <i style="--clr:white;"></i>
+        <i style="--clr:#44ffc1;"></i>
+        
+        <div class="login">
+        <h2>Login</h2>
+        
+        <div class="inputBx">
+            <input type="text" placeholder="Username" id="username" name="username">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="usernameError" class="error-message" style="color: red;"></span><br>
+        </div>
+        <div class="inputBx">
+            <input type="password" placeholder="Password" id="password" name="password">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="passwordError" class="error-message" style="color: red;"></span><br>
+        </div>
+        <div class="inputBx">
+            <input type="submit" value="Sign in">
+        </div>
+        <!--<div class="links">
+            <a href="#">Forget Password</a>
+            <a href="#">Signup</a>
+        </div>
+        </div>
+        </form>
+    </div>-->
+    <!--ring div ends here-->
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username == "") {
+                document.getElementById("usernameError").innerText = "Username is required";
+                return false;
+            } else {
+                document.getElementById("usernameError").innerText = "";
+            }
+            if (password == "") {
+                document.getElementById("passwordError").innerText = "Password is required";
+                return false;
+            } else {
+                document.getElementById("passwordError").innerText = "";
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
